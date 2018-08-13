@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Budynki</title>
+</head>
+<body>
+<table class="table" width="10px">
+    <thead>
+    <tr>
+        <th> Edytuj </th>
+        <th> Usuń </th>
+        <th> Numer</th>
+        <th> Powierzchnia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flat: ${flats}">
+        <td><a  th:href="@{'/edytujMieszkanie?id=' + ${flat.id}}">edytuj pozycję</a></td>
+        <td><a  th:href="@{'/usunMieszkanie?id=' + ${flat.id}}">usuń pozycję</a></td>
+        <td th:text="${flat.number}"></td>
+        <td th:text="${flat.surface}"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

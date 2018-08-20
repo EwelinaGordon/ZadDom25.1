@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Building</title>
+</head>
+<body>
+<div>
+</br><h3>Szczegóły wspólnoty</h3>
+
+    <p>Suma powierznchni</p>
+    <p  th:text="${flatsArea}"/>
+
+
+    <p>Lista mieszkań</p>
+
+    <table>
+        <th:block th:each="flat : ${allFlats}">
+            <tr>
+                <td th:text="${flat.number}">...</td>
+                <td th:text="${flat.surface}">...</td>
+            </tr>
+        </th:block>
+    </table>
+
+    <p>Lista mieszkańców</p>
+
+    <table>
+        <th:block th:each="inhabitant : ${inhabitants}">
+            <tr>
+                <td th:text="${inhabitant.firstName}">...</td>
+                <td th:text="${inhabitant.lastName}">...</td>
+            </tr>
+        </th:block>
+    </table>
+
+
+</div>
+</body>
+</html>

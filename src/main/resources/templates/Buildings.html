@@ -7,10 +7,13 @@
 </head>
 <body>
 <table class="table" width="10px">
+    <a href="/">Strona główna</a>
     <thead>
     <tr>
         <th> Edytuj </th>
         <th> Usuń </th>
+        <th> Szegóły </th>
+        <th> Dodaj mieszkanie</th>
         <th> Nazwa</th>
         <th> Adres</th>
     </tr>
@@ -19,6 +22,8 @@
     <tr th:each="building: ${buildings}">
         <td><a  th:href="@{'/edytujBudynek?id=' + ${building.id}}">edytuj pozycję</a></td>
         <td><a  th:href="@{'/usunBudynek?id=' + ${building.id}}">usuń pozycję</a></td>
+        <td><a  th:href="@{'/szczegolyBudynku?id=' + ${building.id}}">szczegóły</a></td>
+        <td><a  th:href="@{'/dodajMieszkanie?id=' + ${building.id}}">dodaj mieszkanie</a></td>
         <td th:text="${building.name}"></td>
         <td th:text="${building.address}"></td>
 

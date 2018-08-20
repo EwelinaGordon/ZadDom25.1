@@ -6,11 +6,14 @@
     <title>Budynki</title>
 </head>
 <body>
+<a href="/">Strona główna</a>
 <table class="table" width="10px">
     <thead>
     <tr>
         <th> Edytuj </th>
         <th> Usuń </th>
+        <th> Szczegóły </th>
+        <th> Dodaj mieszkańca</th>
         <th> Numer</th>
         <th> Powierzchnia</th>
     </tr>
@@ -19,6 +22,8 @@
     <tr th:each="flat: ${flats}">
         <td><a  th:href="@{'/edytujMieszkanie?id=' + ${flat.id}}">edytuj pozycję</a></td>
         <td><a  th:href="@{'/usunMieszkanie?id=' + ${flat.id}}">usuń pozycję</a></td>
+        <td><a  th:href="@{'/szczegolyMieszkania?id=' + ${flat.id}}">szczegóły</a></td>
+        <td><a  th:href="@{'/dodajMieszkancaDoMieszkania?id=' + ${flat.id}}">Dodaj mieszkańca</a></td>
         <td th:text="${flat.number}"></td>
         <td th:text="${flat.surface}"></td>
 

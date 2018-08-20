@@ -10,7 +10,7 @@ public class Building {
     private long id;
     private String name;
     private String address;
-    @OneToMany(mappedBy = "building")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "building", cascade = CascadeType.ALL)
     private List<Flat> flat;
 
     public String getName() {
@@ -35,5 +35,13 @@ public class Building {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Flat> getFlat() {
+        return flat;
+    }
+
+    public void setFlat(List<Flat> flat) {
+        this.flat = flat;
     }
 }

@@ -45,4 +45,12 @@ public class Inhabitant {
     public void setId(long id) {
         this.id = id;
     }
+
+    public Flat getFlat() {
+        return flat;
+    }
+
+    public void setFlat(Flat flat) {
+        this.flat = flat;
+    }
 }

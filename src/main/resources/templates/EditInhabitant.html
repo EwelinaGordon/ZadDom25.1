@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Building</title>
+</head>
+<body>
+<div>
+</br><h3>Mieszkaniec</h3>
+    <form action="/zapiszMieszkanca" method="post" th:object="${inhabitant}">
+        Imie: <input type="text" th:field="*{firstName}"/>
+        Nazwisko: <input type="text" th:field="*{lastName}"/>
+        Plec: <input type="text" th:field="*{gender}"/>
+        <input type="hidden" th:field="*{id}"/>
+        <input type="submit" value="Zapisz" />
+    </form><br>
+</div>
+</body>
+</html>

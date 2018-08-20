@@ -10,7 +10,7 @@ public class Flat {
     private long id;
     private int number;
     private double surface;
-    @OneToMany(mappedBy = "flat")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "flat", cascade = CascadeType.ALL)
     private List<Inhabitant> inhabitant;
     @ManyToOne
     private Building building;
@@ -48,5 +48,13 @@ public class Flat {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
     }
 }
